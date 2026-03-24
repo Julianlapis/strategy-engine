@@ -1,0 +1,22 @@
+{
+  "name": "strategy-engine",
+  "version": "0.1.0",
+  "description": "A strategy engine for brand strategy, creative briefs, product vision, adversarial pressure testing, and self-improving strategic output. Built for Julian Alexander.",
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "author": {
+    "name": "Julian Alexander"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "strategy",
+    "brand",
+    "creative-brief",
+    "product-strategy",
+    "positioning",
+    "narrative",
+    "adversarial",
+    "courtroom",
+    "self-improving"
+  ]
+}

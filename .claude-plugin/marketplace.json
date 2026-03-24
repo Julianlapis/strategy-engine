@@ -1,0 +1,30 @@
+{
+  "name": "strategy-engine",
+  "owner": {
+    "name": "Julian Alexander"
+  },
+  "metadata": {
+    "description": "Strategy engine for brand strategy, creative briefs, product vision, adversarial debate, and self-improving output",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "strategy-engine",
+      "source": "./",
+      "description": "A strategy engine for the full range of strategic work",
+      "version": "0.1.0",
+      "author": {
+        "name": "Julian Alexander"
+      },
+      "license": "UNLICENSED",
+      "keywords": [
+        "strategy",
+        "brand",
+        "creative-brief",
+        "product-strategy",
+        "courtroom",
+        "self-improving"
+      ]
+    }
+  ]
+}
