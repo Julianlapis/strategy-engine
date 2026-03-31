@@ -15,6 +15,7 @@ Read before doing ANY work:
 3. `rules/quality-gates.md` — Quality gates apply
 4. `references/narrative-engines.md` — Know the narrative structures
 5. `references/anti-patterns.md` — Know the failure modes
+6. `references/pitch-deck-pattern.md` — C&T pitch deck structure (Acts 1-4, canonical from Bumble/Anthropic/Xbox)
 </required_reading>
 
 # /strategy:narrative-review

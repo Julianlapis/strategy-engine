@@ -12,6 +12,7 @@ Read before doing ANY work:
 2. `rules/voice.md` — Voice DNA + Stop-Slop rules
 3. `rules/quality-gates.md` — Scoring system and anti-patterns
 4. `rules/process.md` — Phase sequencing
+5. `references/pitch-deck-pattern.md` — C&T pitch deck structure (from Bumble, Anthropic, Xbox decks). The canonical Act 1-4 structure for all pitch narratives.
 </required_reading>
 
 # /strategy:narrative
