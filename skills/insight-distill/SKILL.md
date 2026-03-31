@@ -12,6 +12,7 @@ Read before doing ANY work:
 1. `feedback-log.md` — Binding corrections from Julian
 2. `rules/voice.md` — Voice rules apply to all output
 3. `rules/quality-gates.md` — Quality gates apply
+4. `references/research-deck-pattern.md` — Xbox Game Pass tissue deck benchmark. The gold standard for how research becomes slides: Misperception → Reality pattern, section truths, real human voices as proof.
 </required_reading>
 
 # /strategy:insight-distill
