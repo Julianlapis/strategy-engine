@@ -10,11 +10,13 @@ description: |
 <required_reading>
 Read before doing ANY work:
 1. `feedback-log.md` — Binding corrections from Julian. Override everything.
-2. `rules/voice.md` — Voice DNA + Stop-Slop enforcement.
-3. `rules/quality-gates.md` — Scoring, anti-patterns, mandatory checks.
-4. `rules/process.md` — Phase sequencing, approval gates.
-5. `~/.claude/voice-dna.md` — Full voice identity (Layer 1).
-6. `~/.claude/copy-polish.md` — Client polish (Layer 2, applied to all product output).
+2. `references/sacred-six.md` — Universal brief framework. Sacred Six sections, per-section rubrics, quality gate process. ALL briefs follow this structure.
+3. `~/.claude/feedback/strategy/sharpness-rubric.md` — Sharpness scoring. Run BEFORE presenting.
+4. `rules/voice.md` — Voice DNA + Stop-Slop enforcement.
+5. `rules/quality-gates.md` — Scoring, anti-patterns, mandatory checks.
+6. `rules/process.md` — Phase sequencing, approval gates.
+7. `~/.claude/voice-dna.md` — Full voice identity (Layer 1).
+8. `~/.claude/copy-polish.md` — Client polish (Layer 2, applied to all product output).
 </required_reading>
 
 # /strategy:product
@@ -161,6 +163,11 @@ PHASE 1: INTAKE
   - The competitive context (who else, why they fail)
   - Any constraints mentioned
 
+PHASE 1.5: CONTEXT GATE (first run only)
+  If this is the first product skill run on this project, fire the Project
+  Context Gate (see section above). Capture delivery type, builder, fidelity.
+  If context was already captured in a prior mode, confirm it still holds.
+
 PHASE 2: STRUCTURE (PAUSE for Julian's approval)
   Present:
   a) The problem in one sentence
@@ -278,6 +285,10 @@ PHASE 1: INTAKE
   Read the brief (docs/strategy/04-brief.md).
   If the brief doesn't exist, stop. Tell Julian to run vision mode first.
   Extract: rallying cry, proposition, audience, constraints, exclusions.
+
+PHASE 1.5: CONTEXT GATE
+  If project context wasn't captured during vision mode, fire the Project
+  Context Gate now. If it was, confirm it still holds for spec mode.
 
 PHASE 2: STRUCTURE (PAUSE for Julian's approval)
   Present:
@@ -444,12 +455,19 @@ PHASE 1: INTAKE
   If the spec doesn't exist, stop. Tell Julian to run spec mode first.
   Extract: capabilities, requirements, constraints, open questions.
 
+PHASE 1.5: CONTEXT GATE
+  If project context wasn't captured during spec mode, fire the Project
+  Context Gate now. If it was, confirm it still holds for map mode.
+  Map mode is the most affected by delivery context: a pitch map looks
+  very different from a production map.
+
 PHASE 2: STRUCTURE (PAUSE for Julian's approval)
   Present:
   a) Proposed component list derived from capabilities
   b) Proposed page/template list
   c) Proposed zone model for the primary page (homepage or equivalent)
   d) Which capabilities map to which components
+  e) If delivery_type is "pitch": proposed tier assignments per component
 
   DO NOT proceed until Julian approves the structure.
 
@@ -625,3 +643,71 @@ The skill adjusts depth based on project size, but the brief structure stays fix
 | **Zone maps** | Primary page only | 3-5 key pages | Every template |
 | **User flows** | 1-2 primary flows | 3-5 flows | All critical flows + edge cases |
 | **Sprint phasing** | Not needed | Optional | Required (which components in which sprint) |
+
+---
+
+## Project Context Gate (Mandatory, All Modes)
+
+Between INTAKE and STRUCTURE in every mode, pause to capture the project's delivery
+context. This gate exists because the same pipeline produces pitch prototypes, MVP specs,
+and full production maps. The depth, tiering, and artifact shape change based on what's
+being built and who's building from it.
+
+**When to fire:** First time the product skill runs on a project. The answers persist
+for subsequent modes in the same project (spec inherits the brief's context, map inherits
+the spec's context). If context was captured in an earlier mode, confirm it still holds
+and move on.
+
+**Questions (ask via AskUserQuestion, not chat):**
+
+```
+PROJECT CONTEXT GATE
+─────────────────────────────────────────────────────
+1. DELIVERY TYPE: What's the final output?
+   [ ] Pitch / demo prototype (limited screens, sell the vision)
+   [ ] MVP / v1 (shippable product, scoped tight)
+   [ ] Full product (complete system, production-ready)
+
+2. BUILDER: Who builds from this document?
+   [ ] Solo (Julian + Arc agents)
+   [ ] Designer + Julian (small team, shared repo)
+   [ ] Full team (agency or multi-discipline)
+
+3. FIDELITY: What level of design is needed?
+   [ ] Screen-level (key screens designed, rest described)
+   [ ] Flow-level (full user journeys designed end-to-end)
+   [ ] System-level (design system, every template, every state)
+
+4. ANYTHING UNUSUAL? (free text, optional)
+   Timeline pressure, regulatory constraints, team context,
+   client expectations that would change how you scope this.
+─────────────────────────────────────────────────────
+```
+
+**How answers shape output:**
+
+| Answer | Effect on spec | Effect on map |
+|--------|---------------|---------------|
+| **Pitch** | Capabilities stay full (the vision matters). Success metrics can reference industry benchmarks rather than commitments. | Components get tiered (demo/conceptual/reference). Flows get tiered (demo 2, describe rest). Edge cases parked. Shot list added. |
+| **MVP** | Capabilities scoped to v1 only. "Optional" fields are explicit cut candidates. | Components are all buildable. No conceptual tier. Flows have edge cases. |
+| **Full product** | Full capability matrix. Integration requirements. Data model. | Full Cenex-style map. Every template, every zone, every flow. Sprint phasing required. |
+| **Solo builder** | .specs/ generation offered. Agent-structured YAML matters. | YAML frontmatter is load-bearing (agents consume it). |
+| **Designer + Julian** | Human-readable descriptions matter most. | Zone maps and component cards are the primary artifacts. |
+| **Full team** | Both human and agent readability. | Dual-audience format (YAML + markdown). |
+| **Screen-level** | N/A | Tier system required. Shot list required. |
+| **Flow-level** | N/A | All primary flows designed, edge cases included. |
+| **System-level** | N/A | Design system tokens, every state, every variation documented. |
+
+**Persistence:** Store context answers in the spec or map file's YAML frontmatter
+so downstream modes and future sessions can read them:
+
+```yaml
+# Project context (captured at spec phase, confirmed at map phase)
+delivery_type: pitch
+builder: designer-and-julian
+fidelity: screen-level
+notes: "Pitch to win Punt as client. Deck to client April 9. Limited prototype for demo."
+```
+
+**If context wasn't captured and you're already in STRUCTURE:** Stop. Ask. The 30 seconds
+this takes saves hours of over-building or under-building.

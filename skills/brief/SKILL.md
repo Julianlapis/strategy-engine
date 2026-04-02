@@ -10,9 +10,11 @@ description: |
 <required_reading>
 Read before doing ANY work:
 1. `feedback-log.md` — Binding corrections
-2. `rules/voice.md` — Two-layer voice system
-3. `~/.claude/copy-polish.md` — Layer 2: plain language, directness, jargon elimination (this skill is client-facing)
-4. `rules/quality-gates.md` — Quality gates (adapted for brief format)
+2. `references/sacred-six.md` — Universal brief framework. Sacred Six sections, per-section rubrics, quality gate process. ALL briefs follow this structure.
+3. `~/.claude/feedback/strategy/sharpness-rubric.md` — Sharpness scoring. Run BEFORE presenting.
+4. `rules/voice.md` — Two-layer voice system
+5. `~/.claude/copy-polish.md` — Layer 2: plain language, directness, jargon elimination (this skill is client-facing)
+6. `rules/quality-gates.md` — Quality gates (adapted for brief format)
 </required_reading>
 
 # /strategy:brief
