@@ -18,7 +18,7 @@
 
 ## What This Is
 
-Strategy Engine is a Claude Code plugin that gives you a full strategic practice inside your terminal. It runs 13 specialized agents across research, synthesis, critique, and writing to produce strategy that's specific, grounded, and ready for stakeholders.
+Strategy Engine is a Claude Code plugin that gives you a full strategic practice inside your terminal. It runs 16 specialized agents across research, synthesis, critique, and writing to produce strategy that's specific, grounded, and ready for stakeholders.
 
 It's not a chatbot that writes marketing copy. It's a multi-agent system where researchers find evidence, a distiller extracts tensions, debaters pressure-test every claim, and a writer produces documents that sound like a human strategist wrote them.
 
@@ -38,7 +38,6 @@ It's not a chatbot that writes marketing copy. It's a multi-agent system where r
 | **Courtroom** | `/strategy:courtroom` | 10 agents debate your idea across 2 rounds until it's bulletproof |
 | **Distill** | `/strategy:distill` | Compress copy without losing meaning. 4 words where the draft used 8 |
 | **Narrative Review** | `/strategy:narrative-review` | Score narrative against brief on 7 dimensions before showing stakeholders |
-| **Sharpen** | `/strategy:sharpen` | Interactive self-improvement loop for any skill or agent. Manual precision tuning (auto-sharpen handles routine drift) |
 | **Pipeline** | `/strategy:pipeline` | Full 7-step sequence: intake → research → distill → brief → spec → map → build |
 
 ## The Pipeline
@@ -169,7 +168,7 @@ The `.claude-plugin/plugin.json` manifest tells Claude Code how to load skills a
 strategy-engine/
 ├── .claude-plugin/
 │   └── plugin.json           # Plugin manifest (name, version, entry points)
-├── skills/                   # 13 executable modes, each with a SKILL.md
+├── skills/                   # 11 executable modes, each with a SKILL.md
 │   ├── go/                   # Entry point router
 │   ├── narrative/            # Strategy docs + slide copy
 │   ├── brief/                # Creative briefs (Sacred Six)
@@ -180,7 +179,6 @@ strategy-engine/
 │   ├── pressure-test/        # Fast adversarial critique
 │   ├── distill/              # Compress without losing meaning
 │   ├── narrative-review/     # Score narrative before stakeholders
-│   ├── sharpen/              # Self-improvement loop
 │   ├── pipeline/             # Full 7-step sequence
 │   └── using-strategy/       # Bootstrap control plane
 ├── agents/                   # One .md file per agent (lens + instructions)
@@ -236,21 +234,9 @@ The system is designed to be forked and reshaped. Every file is a lever.
 
 8. **`logs/execution-log.md`** — The observation history. The system scans recent entries to flag recurring weak dimensions.
 
-### The Sharpen Loop
+### Self-Improvement
 
-The engine has two layers of self-improvement, both based on Karpathy's autoresearch method (small mutations, measured outcomes, keep or revert):
-
-**Auto-sharpen (always on):** Runs automatically after sessions where skill scores drift. Detects weak dimensions, spawns background improvement loops, applies mutations, and notifies you at next session start. This handles routine maintenance.
-
-**`/strategy:sharpen` (manual):** The interactive version. Use it when you want to watch mutations happen, steer them, reject changes, or target a specific dimension that auto-sharpen hasn't caught yet. The process:
-
-1. Pick a target (skill, agent, quality gate)
-2. Define a scoring checklist
-3. Baseline (run 3x, score)
-4. Mutation loop: analyze weakness, hypothesize fix, change one thing, test 3x, keep or revert
-5. Repeat until 90%+ three times in a row
-
-Your feedback log and voice rules stay immutable (ground truth). Everything else is fair game for mutation.
+The engine improves itself automatically via the universal `/sharpen` skill and auto-sharpen hooks. Scores drift? Auto-sharpen detects weak dimensions after sessions and runs background improvement loops. Want to steer it manually? Use `/sharpen` and point it at any strategy-engine skill.
 
 ## Usage Examples
 

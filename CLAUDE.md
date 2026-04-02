@@ -20,8 +20,7 @@ strategy-engine/
 │   ├── distill/              # Compress copy without losing meaning
 │   ├── insight-distill/      # Research → insights, tensions, hypotheses
 │   ├── narrative-review/     # Score narrative against brief before stakeholders
-│   ├── research/             # Deep desk research with verified sources
-│   └── sharpen/              # Autoresearch self-improvement loop
+│   └── research/             # Deep desk research with verified sources
 ├── agents/
 │   ├── courtroom/            # Courtroom debate panel agents
 │   ├── distill/              # Research distillation agents
@@ -60,7 +59,6 @@ All commands use the `/strategy:` namespace prefix.
 8. INSIGHT     /strategy:insight-distill  → Research → insights, tensions, way in
 9. REVIEW      /strategy:narrative-review → Score narrative before stakeholders
 10. RESEARCH   /strategy:research         → Deep desk research, verified sources
-11. IMPROVE    /strategy:sharpen          → Autoresearch self-improvement
 ```
 
 ## Key Principles
