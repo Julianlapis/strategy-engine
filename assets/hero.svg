@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="680" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="cool" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="680" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="680"/><line x1="60" y1="0" x2="60" y2="680"/>
+    <line x1="120" y1="0" x2="120" y2="680"/><line x1="180" y1="0" x2="180" y2="680"/>
+    <line x1="240" y1="0" x2="240" y2="680"/><line x1="300" y1="0" x2="300" y2="680"/>
+    <line x1="360" y1="0" x2="360" y2="680"/><line x1="420" y1="0" x2="420" y2="680"/>
+    <line x1="480" y1="0" x2="480" y2="680"/><line x1="540" y1="0" x2="540" y2="680"/>
+    <line x1="600" y1="0" x2="600" y2="680"/><line x1="660" y1="0" x2="660" y2="680"/>
+    <line x1="720" y1="0" x2="720" y2="680"/><line x1="780" y1="0" x2="780" y2="680"/>
+    <line x1="840" y1="0" x2="840" y2="680"/><line x1="900" y1="0" x2="900" y2="680"/>
+    <line x1="960" y1="0" x2="960" y2="680"/><line x1="1020" y1="0" x2="1020" y2="680"/>
+    <line x1="1080" y1="0" x2="1080" y2="680"/><line x1="1140" y1="0" x2="1140" y2="680"/>
+    <line x1="0" y1="60" x2="1200" y2="60"/><line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/><line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/><line x1="0" y1="600" x2="1200" y2="600"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="80" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" letter-spacing="8" fill="#6366f1" opacity="0.7">CLAUDE CODE PLUGIN</text>
+  <text x="600" y="130" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" letter-spacing="3" fill="#ffffff">STRATEGY ENGINE</text>
+  <text x="600" y="160" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#a1a1aa" letter-spacing="1">Multi-agent strategic reasoning. Research. Distill. Argue. Write. Ship.</text>
+
+  <!-- Pipeline flow -->
+  <!-- Step 1: Research -->
+  <g transform="translate(100, 220)">
+    <rect width="160" height="90" rx="8" fill="#1e1e2e" stroke="#6366f1" stroke-width="1.5" opacity="0.9"/>
+    <text x="80" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" letter-spacing="3" fill="#6366f1">RESEARCH</text>
+    <line x1="20" y1="38" x2="140" y2="38" stroke="#6366f1" stroke-width="0.5" opacity="0.3"/>
+    <text x="80" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#a1a1aa">3 parallel agents</text>
+    <text x="80" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#a1a1aa">Scored findings</text>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <g filter="url(#glow)">
+    <line x1="270" y1="265" x2="330" y2="265" stroke="#6366f1" stroke-width="1.5" opacity="0.6"/>
+    <polygon points="330,260 340,265 330,270" fill="#6366f1" opacity="0.6"/>
+  </g>
+
+  <!-- Step 2: Distill -->
+  <g transform="translate(350, 220)">
+    <rect width="160" height="90" rx="8" fill="#1e1e2e" stroke="#8b5cf6" stroke-width="1.5" opacity="0.9"/>
+    <text x="80" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" letter-spacing="3" fill="#8b5cf6">DISTILL</text>
+    <line x1="20" y1="38" x2="140" y2="38" stroke="#8b5cf6" stroke-width="0.5" opacity="0.3"/>
+    <text x="80" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#a1a1aa">Insights &amp; tensions</text>
+    <text x="80" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#a1a1aa">Strategic platform</text>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <g filter="url(#glow)">
+    <line x1="520" y1="265" x2="580" y2="265" stroke="#8b5cf6" stroke-width="1.5" opacity="0.6"/>
+    <polygon points="580,260 590,265 580,270" fill="#8b5cf6" opacity="0.6"/>
+  </g>
+
+  <!-- Step 3: Brief -->
+  <g transform="translate(600, 220)">
+    <rect width="160" height="90" rx="8" fill="#1e1e2e" stroke="#f59e0b" stroke-width="1.5" opacity="0.9"/>
+    <text x="80" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" letter-spacing="3" fill="#f59e0b">BRIEF</text>
+    <line x1="20" y1="38" x2="140" y2="38" stroke="#f59e0b" stroke-width="0.5" opacity="0.3"/>
+    <text x="80" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#a1a1aa">Sacred Six framework</text>
+    <text x="80" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#a1a1aa">The core document</text>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <g filter="url(#glow)">
+    <line x1="770" y1="265" x2="830" y2="265" stroke="#f59e0b" stroke-width="1.5" opacity="0.6"/>
+    <polygon points="830,260 840,265 830,270" fill="#f59e0b" opacity="0.6"/>
+  </g>
+
+  <!-- Step 4: Articulate -->
+  <g transform="translate(850, 220)">
+    <rect width="160" height="90" rx="8" fill="#1e1e2e" stroke="#10b981" stroke-width="1.5" opacity="0.9"/>
+    <text x="80" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" letter-spacing="3" fill="#10b981">ARTICULATE</text>
+    <line x1="20" y1="38" x2="140" y2="38" stroke="#10b981" stroke-width="0.5" opacity="0.3"/>
+    <text x="80" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#a1a1aa">Narrative + slide copy</text>
+    <text x="80" y="72" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#a1a1aa">4 narrative engines</text>
+  </g>
+
+  <!-- The Courtroom -->
+  <g transform="translate(200, 360)">
+    <rect width="800" height="200" rx="10" fill="#1e1e2e" stroke="#ef4444" stroke-width="1" opacity="0.8"/>
+
+    <!-- Courtroom header -->
+    <text x="400" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="5" fill="#ef4444">THE COURTROOM</text>
+    <text x="400" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#71717a">10 agents argue across 2 rounds until the idea is bulletproof</text>
+    <line x1="40" y1="58" x2="760" y2="58" stroke="#ef4444" stroke-width="0.5" opacity="0.2"/>
+
+    <!-- Agent dots - Row 1 -->
+    <g transform="translate(60, 80)">
+      <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#6366f1" stroke-width="1"/>
+      <text x="0" y="3" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" fill="#6366f1" font-weight="600">RED</text>
+      <text x="0" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#52525b">Simplicity</text>
+    </g>
+    <g transform="translate(145, 80)">
+      <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="0" y="3" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" fill="#8b5cf6" font-weight="600">CON</text>
+      <text x="0" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#52525b">Inversion</text>
+    </g>
+    <g transform="translate(230, 80)">
+      <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#06b6d4" stroke-width="1"/>
+      <text x="0" y="3" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" fill="#06b6d4" font-weight="600">EMP</text>
+      <text x="0" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#52525b">Evidence</text>
+    </g>
+    <g transform="translate(315, 80)">
+      <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#f59e0b" stroke-width="1"/>
+      <text x="0" y="3" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" fill="#f59e0b" font-weight="600">CMP</text>
+      <text x="0" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#52525b">Category</text>
+    </g>
+    <g transform="translate(400, 80)">
+      <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#ef4444" stroke-width="1"/>
+      <text x="0" y="3" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" fill="#ef4444" font-weight="600">CYN</text>
+      <text x="0" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#52525b">Org reality</text>
+    </g>
+    <g transform="translate(485, 80)">
+      <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#ec4899" stroke-width="1"/>
+      <text x="0" y="3" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" fill="#ec4899" font-weight="600">CUL</text>
+      <text x="0" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#52525b">Culture</text>
+    </g>
+    <g transform="translate(570, 80)">
+      <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#a855f7" stroke-width="1"/>
+      <text x="0" y="3" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" fill="#a855f7" font-weight="600">CRE</text>
+      <text x="0" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#52525b">Express</text>
+    </g>
+    <g transform="translate(655, 80)">
+      <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#14b8a6" stroke-width="1"/>
+      <text x="0" y="3" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" fill="#14b8a6" font-weight="600">AUD</text>
+      <text x="0" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#52525b">Real person</text>
+    </g>
+
+    <!-- Row 2 - centered -->
+    <g transform="translate(315, 145)">
+      <circle cx="0" cy="0" r="22" fill="#1a1a2e" stroke="#78716c" stroke-width="1"/>
+      <text x="0" y="3" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" fill="#78716c" font-weight="600">HIS</text>
+      <text x="0" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#52525b">Patterns</text>
+    </g>
+    <g transform="translate(485, 145)">
+      <circle cx="0" cy="0" r="24" fill="#1a1a2e" stroke="#fbbf24" stroke-width="1.5" filter="url(#glow)"/>
+      <text x="0" y="3" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" fill="#fbbf24" font-weight="700">SYN</text>
+      <text x="0" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="#fbbf24" opacity="0.7">Synthesis</text>
+    </g>
+
+    <!-- Connection lines between agents (debate) -->
+    <g opacity="0.08" stroke="#ffffff" stroke-width="0.5">
+      <line x1="82" y1="80" x2="145" y2="80"/>
+      <line x1="167" y1="80" x2="230" y2="80"/>
+      <line x1="252" y1="80" x2="315" y2="80"/>
+      <line x1="337" y1="80" x2="400" y2="80"/>
+      <line x1="422" y1="80" x2="485" y2="80"/>
+      <line x1="507" y1="80" x2="570" y2="80"/>
+      <line x1="592" y1="80" x2="655" y2="80"/>
+      <line x1="400" y1="102" x2="485" y2="123"/>
+      <line x1="315" y1="102" x2="315" y2="123"/>
+    </g>
+  </g>
+
+  <!-- Bottom stats -->
+  <g transform="translate(0, 600)">
+    <line x1="100" y1="0" x2="1100" y2="0" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+
+    <text x="200" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#6366f1">13</text>
+    <text x="200" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#52525b" letter-spacing="2">MODES</text>
+
+    <text x="400" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#8b5cf6">16</text>
+    <text x="400" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#52525b" letter-spacing="2">AGENTS</text>
+
+    <text x="600" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#f59e0b">4</text>
+    <text x="600" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#52525b" letter-spacing="2">NARRATIVE ENGINES</text>
+
+    <text x="800" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#ef4444">3</text>
+    <text x="800" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#52525b" letter-spacing="2">QUALITY LAYERS</text>
+
+    <text x="1000" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#10b981">35/50</text>
+    <text x="1000" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#52525b" letter-spacing="2">QUALITY THRESHOLD</text>
+  </g>
+</svg>
