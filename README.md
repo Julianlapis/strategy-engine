@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="assets/hero.svg" alt="Strategy Engine - Multi-agent strategic reasoning system for Claude Code" width="100%">
+<img src="assets/hero-v2.svg" alt="Strategy Engine - Multi-agent strategic reasoning system for Claude Code" width="100%">
 
 <br>
 
