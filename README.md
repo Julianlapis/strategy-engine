@@ -38,12 +38,12 @@ It's not a chatbot that writes marketing copy. It's a multi-agent system where r
 | **Courtroom** | `/strategy:courtroom` | 10 agents debate your idea across 2 rounds until it's bulletproof |
 | **Distill** | `/strategy:distill` | Compress copy without losing meaning. 4 words where the draft used 8 |
 | **Narrative Review** | `/strategy:narrative-review` | Score narrative against brief on 7 dimensions before showing stakeholders |
-| **Sharpen** | `/strategy:sharpen` | Self-improvement loop (Karpathy's autoresearch method) for any skill or agent |
+| **Sharpen** | `/strategy:sharpen` | Interactive self-improvement loop for any skill or agent. Manual precision tuning (auto-sharpen handles routine drift) |
 | **Pipeline** | `/strategy:pipeline` | Full 7-step sequence: intake → research → distill → brief → spec → map → build |
 
 ## The Pipeline
 
-Strategy Engine follows a deliberate sequence. Each step feeds the next.
+Strategy Engine follows a deliberate sequence. Each step feeds the next. But not every project needs every step.
 
 ```
  INTAKE          What are we doing and why?
@@ -53,13 +53,21 @@ Strategy Engine follows a deliberate sequence. Each step feeds the next.
  DISTILL         What's the tension? The insight? The way in?
    ↓
  BRIEF           The core document. 2-4 pages at every scale.
-   ↓
+   │
+   ├── DONE      Brand strategy, positioning, creative briefs stop here.
+   │              The brief IS the deliverable.
+   │
+   ↓              Product work continues:
  SPEC            Capabilities, requirements, success metrics.
    ↓
  MAP             Components, zones, user flows. Dual-audience format.
    ↓
  BUILD           Hand off to your build system or team.
 ```
+
+**Brand projects** (positioning, GTM, creative strategy) run Intake → Research → Distill → Brief. The brief is the output. Hand it to your creative team or use `/strategy:narrative` to produce a full strategy doc with slide-ready copy.
+
+**Product projects** run the full sequence through Spec and Map, then hand off to a build system.
 
 You can enter at any step. Most people start with `/strategy:go` and it figures out where you are.
 
@@ -230,7 +238,11 @@ The system is designed to be forked and reshaped. Every file is a lever.
 
 ### The Sharpen Loop
 
-`/strategy:sharpen` runs Karpathy's autoresearch method on any skill or agent:
+The engine has two layers of self-improvement, both based on Karpathy's autoresearch method (small mutations, measured outcomes, keep or revert):
+
+**Auto-sharpen (always on):** Runs automatically after sessions where skill scores drift. Detects weak dimensions, spawns background improvement loops, applies mutations, and notifies you at next session start. This handles routine maintenance.
+
+**`/strategy:sharpen` (manual):** The interactive version. Use it when you want to watch mutations happen, steer them, reject changes, or target a specific dimension that auto-sharpen hasn't caught yet. The process:
 
 1. Pick a target (skill, agent, quality gate)
 2. Define a scoring checklist
@@ -238,7 +250,7 @@ The system is designed to be forked and reshaped. Every file is a lever.
 4. Mutation loop: analyze weakness, hypothesize fix, change one thing, test 3x, keep or revert
 5. Repeat until 90%+ three times in a row
 
-The system improves itself. Your feedback log stays immutable (it's the ground truth). Voice rules stay immutable. Everything else is fair game for mutation.
+Your feedback log and voice rules stay immutable (ground truth). Everything else is fair game for mutation.
 
 ## Usage Examples
 
