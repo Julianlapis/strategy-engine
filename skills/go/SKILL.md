@@ -58,6 +58,17 @@ If the mode is ambiguous, propose 2 options with rationale and let Julian pick:
 
 Once the mode is confirmed, invoke that mode's skill with Julian's full input carried forward. Don't make Julian repeat context.
 
+## Downstream: Build
+
+Strategy-engine produces strategy. It does not build software. When the strategic
+artifacts are ready and Julian wants to build:
+
+- **Solo build:** Route to `/arc:vision` (reads `04-brief-handoff.yaml` automatically),
+  then the full Arc suite (`arc:ideate` → `arc:build` → `arc:implement` → ship).
+- **Team build:** The team works from `docs/map/` and `docs/strategy/`. Arc is only
+  used for `vision.md` generation.
+- **Full pipeline reference:** `/strategy:pipeline` documents the complete 7-step sequence.
+
 ## Cross-Mode Transitions
 
 If Julian wants to chain modes (e.g., "now turn this positioning into a brief"), carry forward:

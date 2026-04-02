@@ -93,3 +93,9 @@ Team: design sprints + dev sprints, Julian reviews against brief.
 ## The Rule
 
 **Solo build triggers Arc. Team build stays in strategy-engine. Arc:vision is the only bridge.**
+(Teams still use Arc for `vision.md` generation — but only that.)
+
+**Arc without strategy-engine** is valid for small personal projects where the builder
+already knows what they're building. Skip the pipeline, go straight to `/arc:vision`
+or `/arc:ideate`. The pipeline exists for when the problem needs to be understood
+before it's solved.
