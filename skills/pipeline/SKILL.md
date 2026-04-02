@@ -7,6 +7,11 @@ description: |
   For stateful multi-session runs, use `lead pipeline` from terminal instead.
 ---
 
+<required_reading>
+For the full workflow document (depth dials, scoring rubrics, practical examples, brand+product fork):
+`references/the-pipeline.md`
+</required_reading>
+
 # /strategy:pipeline
 
 The full strategy-to-build sequence. Every project hits every step.
