@@ -240,3 +240,10 @@ Researchers specifically look for cases where the thesis fails.
 ### Backfill
 `/strategy:research backfill [file path]`
 Reads the document, identifies unsourced claims, runs targeted research on each.
+
+## Cleanup
+
+After all research agents complete, kill orphaned subagent processes:
+```bash
+~/.claude/scripts/cleanup-agents.sh
+```

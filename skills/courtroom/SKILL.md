@@ -109,6 +109,13 @@ Show the full synthesis. Let Julian react, ask follow-up questions, or request a
 
 Log the run per `rules/observation.md`. Include agent performance data: which agents produced the strongest critiques, which were weakest, and which changed positions.
 
+### Step 8: Cleanup
+
+Kill orphaned subagent processes from the courtroom run:
+```bash
+~/.claude/scripts/cleanup-agents.sh
+```
+
 ## Configuration
 
 Julian can customize the panel for specific debates:
