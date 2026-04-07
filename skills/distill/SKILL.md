@@ -128,3 +128,97 @@ Log the run per `rules/observation.md`. Track input size, output size, what was 
 - **Specificity loss:** Cut the example that made the claim concrete.
 
 If Julian says "you cut too much" or "this lost the feel," log it in feedback-log.md and recalibrate.
+
+---
+
+## Deck Mode: Cross-Slide Redundancy Detection
+
+Activated when the input is slide-by-slide copy (detected by slide numbering format) or when invoked with `--deck` flag. This mode finds the same idea appearing across multiple slides and proposes consolidation without flattening voice.
+
+### Core Principle
+
+**Keep the sharpest instance. Cut or redirect the others. Never rewrite to "merge."**
+
+This mirrors copy-compression's "select, don't summarize" but applies it across the full deck instead of within a single slide.
+
+### Phase 1: Idea Mapping
+
+Extract every distinct idea from every slide (headline + body). Assign each a short tag. Build a cross-reference table showing where each idea appears:
+
+```
+IDEA: "competitors can't show losses"
+  - Slide 08 body: "No app on the market tracks that."
+  - Slide 12 headline: "...that's why they can't follow us here"
+  - Slide 18 subtitle: "Losses carry the same weight."
+```
+
+An "idea" is a claim, insight, or argument. Not a word or phrase. Two slides can share the word "instinct" without sharing an idea. Two slides can share an idea ("losses are visible") using different words.
+
+### Phase 2: Score Each Instance
+
+For every idea that appears 2+ times, score each instance on the Distillation Rubric.
+
+#### Distillation Rubric (5 dimensions, 1-10 each)
+
+| Dimension | What it measures | 10 looks like | 1 looks like |
+|-----------|-----------------|---------------|--------------|
+| **Sharpness** | Most concrete, specific version? | Named numbers, physical verbs, specific example | Vague restatement of the concept |
+| **Voice Texture** | Sounds like Julian wrote it? | Contractions, register shifts, specificity as wit | Could be any strategist's writing |
+| **Narrative Position** | Earns its place HERE in the arc? | This slide needs this idea to set up the next beat | The idea works but could live anywhere |
+| **Load-Bearing** | If cut, does the slide collapse? | The slide's argument depends on it | The slide works fine without it |
+| **Freshness** | First time the audience encounters this? | First appearance, full weight | 3rd+ time hearing it, diminished impact |
+
+#### Scoring Rules
+
+- Each instance scored 5-50 (sum of 5 dimensions)
+- **Home instance:** highest score across all appearances. Keep.
+- **Redundant (35+):** idea appears elsewhere but this version adds a distinct angle. Flag for Julian's judgment.
+- **Redundant (below 35):** idea is better served elsewhere. Recommend cut.
+- **No home above 40:** flag that the best version of this idea isn't sharp enough. Propose an alternative that preserves voice texture.
+
+### Phase 3: Propose, Don't Execute (MANDATORY)
+
+Present the full redundancy map and proposed cuts. For each flagged instance:
+
+1. Quote the exact text
+2. Show all 5 dimension scores
+3. Name the "home" slide where this idea lives best
+4. Recommendation: KEEP, CUT, or REDIRECT (move a specific phrase to the home slide)
+5. If no instance scores above 40: propose an alternative. Julian can accept, reject, or rewrite.
+
+**Never apply changes without Julian's approval.**
+
+### Phase 4: Apply Approved Cuts
+
+After Julian signs off, apply only the approved changes. For each cut:
+- Remove the redundant text from the slide
+- Verify the slide still reads coherently without it
+- If removing creates a gap, flag it rather than filling it
+
+### What Good Deck Distillation Looks Like
+
+```
+## Redundancy Map
+
+### IDEA: "losses shown at equal weight" (3 instances)
+
+HOME: Slide 12 body (Score: 44/50)
+  Sharpness: 9 | Voice: 8 | Position: 10 | Load-bearing: 9 | Freshness: 8
+  "Every competitor's retention model breaks if they show losses at equal weight."
+
+REDUNDANT: Slide 18 subtitle (Score: 31/50)
+  Sharpness: 6 | Voice: 7 | Position: 6 | Load-bearing: 5 | Freshness: 3
+  "Losses carry the same weight."
+  Recommendation: CUT. Slide 12 landed this 6 slides earlier. Here it restates without advancing.
+
+### Summary: 24 unique ideas. 6 repeated. 4 cuts proposed.
+```
+
+### Failure Modes (Deck-Specific)
+
+- **Flattening:** Rewrote an instance instead of selecting among existing versions. Lost the original's sharpness.
+- **Narrative damage:** Cut an instance that was doing setup work for a later payoff. The payoff now feels unearned.
+- **Over-detection:** Flagged two instances as "the same idea" when they were actually distinct arguments sharing a theme.
+- **Voice averaging:** Proposed alternative sounds like a summary of all instances instead of the sharpest possible version.
+
+If Julian flags any of these, log in feedback-log.md with the specific instance and what went wrong.
