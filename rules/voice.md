@@ -42,7 +42,7 @@ See Julian's global CLAUDE.md and voice-dna.md for the full list. The following 
 
 ### Anti-Slop (Layer 1, final pass)
 
-Run the full stop-slop checklist on every draft:
+Run the full copy-polish checklist on every draft:
 
 - False agency ("the decision emerges")
 - Narrator-from-distance voice ("a GTM engine where...")

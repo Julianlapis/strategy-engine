@@ -37,8 +37,8 @@ Run on every section of the strategy doc and every slide of the slide-ready copy
 - [ ] Would someone living inside the culture recognize this as their experience?
 - [ ] Is the cultural reference doing strategic work (driving the insight), or is it decoration (making the deck feel current)?
 
-### Copy Quality (run stop-slop)
-- [ ] All checks from stop-slop apply. Run the full stop-slop Quick Checks list on every line.
+### Copy Quality (run copy-polish)
+- [ ] All checks from copy-polish apply. Run the full copy-polish Quick Checks list on every line.
 - [ ] Strategy writing has additional traps: false authority ("brands must..."), prediction without evidence ("the future of X is Y"), and category-level claims presented as insights ("Gen Z values authenticity").
 
 ---
@@ -72,9 +72,9 @@ Score the complete output on 5 dimensions (1-10 each). **Below 35/50: revise bef
 
 ---
 
-## Strategy-Specific Stop-Slop Additions
+## Strategy-Specific Copy Polish Additions
 
-Beyond the standard stop-slop banned phrases, strategy writing has its own failure modes:
+Beyond the standard copy-polish banned phrases, strategy writing has its own failure modes:
 
 ### Banned Strategy Phrases
 

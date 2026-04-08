@@ -45,6 +45,16 @@ Slide 24 after: "Audience intelligence that gets sharper with use. Where the nex
 
 ---
 
+## 2026-04-03: Four new rules from Punt narrative session
+
+Added to canonical file (`~/.claude/feedback/strategy/general.md`):
+1. **Headlines must tell the story alone** — Draft headline flow first. If reading only headlines doesn't follow the argument, rewrite. Bumble + Highsnob decks as exemplars.
+2. **Stats belong in source lines, not body copy** — Max 4-5 stats in entire deck. Body carries argument, margins carry proof. Appendix for all sourced data.
+3. **Narrative decks under 30 slides** — Cut process slides, redundant competitive slides, metrics slides. Section dividers carry argument weight.
+4. **Body copy is optional** — Great slide = short headline and nothing else. Test: cover body, read headline. If headline doesn't land alone, fix the headline.
+
+---
+
 ## 2026-03-20: Statement and belief slides had too much body copy
 
 **What happened:** Slides 02 (The Opportunity, red bg) and 03 (The Belief, white bg) each had 3+ sentences of body copy beneath the headline. Julian flagged them as too dense for the slide type. These are statement slides where the headline carries the argument. The body should support, not repeat or expand.

@@ -51,11 +51,8 @@ You receive:
 - Are there claims that feel asserted rather than proven?
 - Score 1-10.
 
-### 5. Voice & Craft (Does it sound like Julian, not AI?)
-- Run against voice-dna.md rules. Any banned phrases? Any AI slop patterns?
-- Is the copy declarative and bold, or hedging and corporate?
-- Are sentences short and punchy where they should be?
-- Does it use physical verbs for abstract processes?
+### 5. Voice & Craft
+Run the full check from `~/.claude/voice-dna.md`. Any banned phrase, em dash, or Big One violation = revision required. The copy linter hook catches mechanical violations; this dimension evaluates judgment calls (rhythm, register shifts, voice authenticity). Pass/fail per line.
 - Score 1-10.
 
 ### 6. Strategic Courage (Does it make a real choice?)
