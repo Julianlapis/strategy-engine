@@ -139,12 +139,14 @@ After the strategy doc is approved (or simultaneously if Julian prefers):
 ---
 SLIDE [N]
 [layout: layout-type]
+[role: What job this slide does in the argument chain — one sentence]
+[key-message: The single takeaway the audience retains]
 
 *[Eyebrow label]*
 
-[Headline copy. One idea. Sentence case.]
+[Headline copy. One complete sentence that argues. Not a list.]
 
-[Body copy. 1-3 sentences max. Accent words in **bold**.]
+[Body copy. 1-3 sentences max. Must do NEW work — never restate headline.]
 
 [Layout note: visual direction if relevant]
 ---
@@ -156,6 +158,16 @@ SLIDE [N]
 - Accent 1-2 words per slide in **bold** for color treatment.
 - Include layout notes for image moments, data viz, positioning maps.
 - The slide sequence must work as a standalone argument.
+
+### Headline vs Role Audit (MANDATORY after writing all slides)
+
+After writing all slides, run this three-part check:
+
+1. **Role test:** Read each headline against its [role:] field. Does the headline DO the job the role requires, or does it just describe the topic? Headlines that describe topics are observations. Headlines that do jobs are arguments.
+2. **Body redundancy test:** For each headline + body pair, check: does any body sentence restate what the headline already said? If yes, replace it with new information or cut it.
+3. **Argument chain test:** Read all headlines in sequence without body copy. Do they build an argument where each makes the next feel inevitable? Key word threading: do the 2-3 words that carry the argument (e.g., "lifestyle," "instinct," "identity") appear on the slides where they're load-bearing?
+
+This audit replaces the looser "Headline Flow" dimension from Phase 5 scoring. The structured audit is more rigorous.
 
 ### Extract, Don't Summarize (MANDATORY)
 
@@ -182,10 +194,56 @@ Run the full quality gate from `rules/quality-gates.md`.
 
 **CRITICAL (from feedback-log.md 2026-03-18):** Both quality layers (Voice DNA + Stop-Slop) must be run LINE-BY-LINE on the strategy doc AND the slide copy. The quality gate is mandatory, not decorative. Every slide, every sentence. No exceptions.
 
+**Copy Quality Gate (Fresh Context):**
+For the copy quality pass, spawn a voice-review subagent with a clean context rather than running checks in the main conversation. The subagent reads ~/.claude/voice-dna.md and ~/.claude/copy-polish.md fresh from disk, receives only the copy to review, and returns line-by-line violations with rewrites. This prevents context-window decay from degrading copy quality checks in long sessions. The mechanical checks (banned phrases, em dashes, adverbs) are handled by the copy linter hook at ~/.claude/hooks/copy-linter.py, which runs on every Write/Edit.
+
 Present the scored output to Julian. Flag any dimension below 7.
 
 ---
 
-## Phase 5: Observation
+## Phase 5: Observation (MANDATORY — feeds auto-sharpen)
 
-After presenting, log a structured observation per `rules/observation.md`.
+After presenting, log a structured observation to **both** locations:
+
+### 1. Plugin log (strategy-engine internal)
+Append to `logs/execution-log.md` per `rules/observation.md`.
+
+### 2. Feedback execution log (triggers auto-sharpen)
+Append to `~/.claude/feedback/logs/execution-log.md` using this exact format:
+
+```markdown
+---
+skill: strategy-engine:narrative
+date: YYYY-MM-DD
+brief_summary: [1-2 sentence summary]
+---
+
+### Scores
+| Dimension | Score |
+|-----------|-------|
+| Tension | /10 |
+| Specificity | /10 |
+| Narrative Arc | /10 |
+| Headline Flow | /10 |
+| Slide Discipline | /10 |
+| Cultural Grounding | /10 |
+| Persuasion | /10 |
+| **Total** | **/70** |
+
+### Weak Dimensions
+[Any dimension below 7 with what was weak]
+
+### Self-Corrections
+[What was caught and fixed before presenting]
+
+### User Feedback
+[Updated after Julian responds]
+```
+
+**Why this matters:** The auto-sharpen hook (`~/.claude/hooks/orchestrator/hooks/sharpen.py`) reads `~/.claude/feedback/logs/execution-log.md` to detect skills with drifting scores. If this file isn't written, the sharpen loop never fires. Every narrative run MUST write an entry here. No exceptions.
+
+**Scoring the new dimensions:**
+- **Headline Flow** (10): Can you read headlines alone and follow the argument? Do they connect like a conversation? Each one a complete thought?
+- **Slide Discipline** (10): Under 30 slides? Stats in margins? Body copy optional? No process slides? Dividers carry weight?
+
+These dimensions are scored against `~/.claude/feedback/strategy/checklist.md` items 10-18.

@@ -55,6 +55,79 @@ These are the labeled section headers used in Julian's strategy decks. They appe
 
 ---
 
+## Slide Role Declaration
+
+Every slide in copy.md gets a **Role** field: one sentence describing its job in the argument chain. The Role is how you judge whether a headline is working.
+
+### Schema
+
+```
+## Slide [N]: [Name]
+- **Role:** [What job this slide does in the argument chain. One sentence.]
+- **Key Message:** [The single takeaway the audience retains.]
+```
+
+### Headline Diagnostic
+
+After writing all slides, run this check on every headline:
+
+1. **"Does this headline DO the job its Role requires, or does it just DESCRIBE the topic?"** A headline that describes the topic ("Prediction markets proved demand and fragility") reports a finding. A headline that does the job ("300,000 users showed up on election night. 5,000 came back.") makes the room feel the retention gap.
+2. **Body redundancy check:** Does any sentence in the body say the same thing as the headline? If yes, replace it with new information or cut it.
+3. **Argument chain check:** Read all headlines in sequence. Do they build an argument where each makes the next feel inevitable? Or do they list topics?
+
+### Eyebrow Rules
+
+Eyebrows should frame the slide's purpose, not mark chapters.
+
+| Good (purpose frame) | Bad (chapter marker) |
+|----------------------|---------------------|
+| THE CATEGORY | 01 / VISION |
+| WHAT WE FOUND | 02 / BRAND STRATEGY |
+| THE INTERSECTION | 03 / DESIGN |
+| WHO WE'RE REACHING | Section 2 |
+
+Chapter markers are wayfinding. Purpose frames tell the reader what kind of argument is on this slide. Purpose frames are preferred for strategy slides. Chapter markers are acceptable on plan/logistics slides (04 / THE PLAN, 04 / BUDGET) where wayfinding matters more than argument.
+
+Eyebrows can also carry sub-framing: "THE CATEGORY: Main Shift" uses the purpose frame plus a qualifier that tells the reader what aspect of the category matters.
+
+---
+
+## Slide Copy Quality Rules
+
+### Headlines are complete arguments, not asset inventories
+
+A headline that lists ingredients ("Four verticals, a Polymarket partnership, and 3M users") is not a headline. It's a brief summary. Headlines must be complete sentences that make a point about the user, the behavior, or the insight. Benchmark: the Xbox Game Pass deck, where every headline argues ("They don't want more games, they want more gaming").
+
+### Body copy extends, never restates
+
+When a headline carries proof points or stats, the body must do NEW work. If body copy restates the headline in different words, it fails. This is the single most common failure mode in slide copy.
+
+### Verbs carry thematic weight
+
+Choose verbs that do double duty: name the action AND carry the slide's thematic payload. "Track the bettor" diagnoses a data problem. "Recognize the bettor" diagnoses an identity problem. If the deck's thesis is about identity, the verb should point at identity.
+
+### Thread key words across the argument arc
+
+Identify the 2-3 words that carry the argument (e.g., "lifestyle," "instinct," "identity"). Use them deliberately on the slides where they're load-bearing. The word that names the opportunity should return when you name the moat.
+
+### Name emotions before insights
+
+On problem/insight pairs, the insight side should name the emotional consequence of the problem before delivering the reframe. Structure: emotional consequence → question → insight. "This leaves him feeling unseen & bored. Why? He bets to prove his instinct."
+
+### Problem scope must match solution scope
+
+If the proposition covers four verticals, the problem statement must name or imply all four. Otherwise the solution overshoots what the argument earned.
+
+### Natural connectors, not staccato fragments
+
+Use "and," "but," "because" to make ideas flow as conversation. Three short fragments in a row ("Live products. Partnership signed. Users exist.") sound like AI. One sentence with conjunctions sounds human.
+
+### Stats tell human stories
+
+User counts and behavioral ratios belong in headlines and body. Revenue and volume figures belong in source lines. The room cares about "300K showed up, 5K stayed" — not "$21B in prediction volume."
+
+---
+
 ## Copy Formatting Rules
 
 1. **Sentence case for all copy.** No ALL CAPS headlines, no Title Case body text. Normal sentence case throughout.
