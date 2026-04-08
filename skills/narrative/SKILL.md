@@ -194,10 +194,10 @@ If the user wants to build the deck in Paper or Figma after Phase 3, invoke `/pa
 
 Run the full quality gate from `rules/quality-gates.md`.
 
-**CRITICAL (from feedback-log.md 2026-03-18):** Both quality layers (Voice DNA + Stop-Slop) must be run LINE-BY-LINE on the strategy doc AND the slide copy. The quality gate is mandatory, not decorative. Every slide, every sentence. No exceptions.
+**CRITICAL (from feedback-log.md 2026-03-18):** Both quality layers (Voice DNA + Copy Polish) must be run LINE-BY-LINE on the strategy doc AND the slide copy. The quality gate is mandatory, not decorative. Every slide, every sentence. No exceptions.
 
 **Copy Quality Gate (Fresh Context):**
-For the copy quality pass, spawn a voice-review subagent with a clean context rather than running checks in the main conversation. The subagent reads ~/.claude/voice-dna.md and ~/.claude/copy-polish.md fresh from disk, receives only the copy to review, and returns line-by-line violations with rewrites. This prevents context-window decay from degrading copy quality checks in long sessions. The mechanical checks (banned phrases, em dashes, adverbs) are handled by the copy linter hook at ~/.claude/hooks/copy-linter.py, which runs on every Write/Edit.
+Invoke the `voice-review` agent (`~/.claude/agents/voice-review.md`). This is mandatory. Do not run voice checks inline from fading context. The agent reads voice-dna.md and copy-polish.md fresh from disk, receives only the copy to review, and returns line-by-line violations with rewrites. Mechanical checks (banned phrases, em dashes, adverbs) are handled by the copy linter hook. The agent focuses on judgment calls: rhythm, register, voice authenticity, thematic verb weight, key word threading.
 
 Present the scored output to Julian. Flag any dimension below 7.
 
