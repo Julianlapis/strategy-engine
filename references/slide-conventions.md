@@ -126,6 +126,30 @@ Use "and," "but," "because" to make ideas flow as conversation. Three short frag
 
 User counts and behavioral ratios belong in headlines and body. Revenue and volume figures belong in source lines. The room cares about "300K showed up, 5K stayed" — not "$21B in prediction volume."
 
+### No rhythmic number patterns as headlines
+
+"One person, six apps, zero record" prioritizes cleverness over clarity. Descending-number patterns are a model copywriting formula. If the audience needs the body to understand the headline, the headline failed. Name the insight directly. Rhythmic kickers can move to body copy where evidence has earned them.
+
+### Kickers earn their place at the end of body, not as headlines
+
+A punchy summary line ("Six apps, zero record") works at the END of body copy after behaviors prove the claim. As a headline, it's a conclusion without premises. Headlines state the claim. Body proves it. Kickers land it.
+
+### One example per headline
+
+If a headline has two parallel examples connected by "and," keep the stronger one and move the other to body copy. Two examples dilute each other. The audience processes one image per headline.
+
+### Analogies must survive the room's worst memory
+
+Before using a brand analogy, ask: "What's the worst thing the room remembers about this brand?" If the worst memory undermines the point, cut the analogy and explain the mechanism directly. ("Every vertical tests the same muscle" beats "Virgin built one attitude.")
+
+### Category slides diagnose categories, not companies
+
+On market and category slides, scope claims to the whole category ("no app," "every platform"), not single companies. Naming one company makes the slide a competitor teardown. The role says "category," the language should match.
+
+### "Why?" bridges connect diagnostic slides to problem slides
+
+When a diagnostic slide follows a problem slide, a one-word bridge ("Why?") at the start of the headline makes the argument chain explicit. "Why? Every platform tracks the bet." connects backward to the retention gap. Use sparingly.
+
 ---
 
 ## Copy Formatting Rules
