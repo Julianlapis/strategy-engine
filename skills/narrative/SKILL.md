@@ -184,7 +184,9 @@ The strategy doc from Phase 2 is the copy source. Slide headlines and body shoul
 
 ### Handoff to agentic-slides
 
-If the user wants to build the deck in Paper or Figma after Phase 3, invoke `/paper-slides` (agentic-slides) with the slide-ready copy as the content file input. The agentic-slides skill has its own extraction and quality gates. Both skills must run their own quality passes — the narrative skill checks strategic quality, agentic-slides checks visual and copy quality in the design context.
+If the user wants to build the deck in Paper or Figma after Phase 3, invoke `/paper-slides` (agentic-slides) with the slide-ready copy as the content file input.
+
+**Handoff contract:** copy.md exiting this phase is finalized: voiced, role-audited, headline-vs-role checked, anti-blandification verified. Agentic-slides compresses for visual constraints (word budgets per layout type) and validates narrative comprehension in rendered form. It does not rewrite for strategic quality. If agentic-slides finds a strategic issue (e.g., a headline that doesn't argue), it flags it back to the user rather than rewriting.
 
 ---
 
