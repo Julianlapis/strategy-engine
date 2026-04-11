@@ -8,6 +8,7 @@ description: |
 ---
 
 <required_reading>
+Read `~/.claude/feedback/pre-flight.md` before any work.
 Read before doing ANY work:
 1. `feedback-log.md` — Binding corrections
 2. `references/sacred-six.md` — Universal brief framework. Sacred Six sections, per-section rubrics, quality gate process. ALL briefs follow this structure.

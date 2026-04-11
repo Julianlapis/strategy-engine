@@ -8,6 +8,7 @@ description: |
 ---
 
 <required_reading>
+Read `~/.claude/feedback/pre-flight.md` before any work.
 For the full workflow document (depth dials, scoring rubrics, practical examples, brand+product fork):
 `references/the-pipeline.md`
 </required_reading>

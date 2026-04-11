@@ -7,6 +7,7 @@ description: |
 ---
 
 <required_reading>
+Read `~/.claude/feedback/pre-flight.md` before any work.
 Read before doing ANY work:
 1. `feedback-log.md` — Binding corrections. These override everything.
 2. `rules/voice.md` — Two-layer voice system (Layer 1: identity, Layer 2: client polish)
@@ -242,7 +243,6 @@ brief_summary: [1-2 sentence summary]
 [Updated after Julian responds]
 ```
 
-**Why this matters:** The auto-sharpen hook (`~/.claude/hooks/orchestrator/hooks/sharpen.py`) reads `~/.claude/feedback/logs/execution-log.md` to detect skills with drifting scores. If this file isn't written, the sharpen loop never fires. Every narrative run MUST write an entry here. No exceptions.
 
 **Scoring the new dimensions:**
 - **Headline Flow** (10): Can you read headlines alone and follow the argument? Do they connect like a conversation? Each one a complete thought?
