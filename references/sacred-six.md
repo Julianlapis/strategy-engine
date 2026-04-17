@@ -359,8 +359,8 @@ Brevity, plain language, human center, single idea, compression. Must hit 35/50.
 
 ### Step 4: Voice + Polish (mandatory for client-facing output)
 
-Run voice-dna.md (Layer 1) and copy-polish.md (Layer 2) line by line.
-Both must hit 35/50 per existing rules.
+Invoke `/write:voice` (fresh-context subagent reads both files from disk).
+Both scores must hit 35/50.
 
 ### Step 5: Present to Julian
 

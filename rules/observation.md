@@ -29,7 +29,7 @@ brief_summary: [1-2 sentence summary of the input]
 [What went wrong, if anything. Which anti-patterns appeared. Which quality checks failed initially.]
 
 ### Self-Corrections
-[What the engine caught and fixed before presenting. E.g., "Rewrote 3 slides after copy-polish caught triple-repeat cadence"]
+[What the engine caught and fixed before presenting. E.g., "Rewrote 3 slides after /write:voice caught triple-repeat cadence"]
 
 ### User Feedback
 [Julian's reaction, corrections, or redirects. Updated after the run if Julian gives feedback.]

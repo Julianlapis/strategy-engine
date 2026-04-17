@@ -559,7 +559,7 @@ Apply Copy Polish scoring.
 
 **Threshold: 35/50.**
 
-**Quick checks (from copy-polish.md):**
+**Quick checks (from copy-polish.md, enforced via /write:voice):**
 - Every acronym expanded on first use?
 - Every industry term defined or replaced?
 - Any claim without a specific number, name, or example?

@@ -549,7 +549,7 @@ Run the full quick checks from voice-dna.md before scoring:
 
 ### Layer 3: Polish (/50) — All product output
 
-Apply copy-polish.md scoring. Five dimensions, 1-10 each:
+Apply copy-polish.md scoring (or invoke `/write:voice` for the full fresh-context pass). Five dimensions, 1-10 each:
 
 | Dimension | Question |
 |---|---|

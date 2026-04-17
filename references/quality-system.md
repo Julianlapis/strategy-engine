@@ -37,8 +37,8 @@ Run on every section of the strategy doc and every slide of the slide-ready copy
 - [ ] Would someone living inside the culture recognize this as their experience?
 - [ ] Is the cultural reference doing strategic work (driving the insight), or is it decoration (making the deck feel current)?
 
-### Copy Quality (run copy-polish)
-- [ ] All checks from copy-polish apply. Run the full copy-polish Quick Checks list on every line.
+### Copy Quality (run /write:voice)
+- [ ] Invoke `/write:voice` for the full voice + polish pass. Mechanical checks run via hook automatically.
 - [ ] Strategy writing has additional traps: false authority ("brands must..."), prediction without evidence ("the future of X is Y"), and category-level claims presented as insights ("Gen Z values authenticity").
 
 ---
@@ -74,7 +74,7 @@ Score the complete output on 5 dimensions (1-10 each). **Below 35/50: revise bef
 
 ## Strategy-Specific Copy Polish Additions
 
-Beyond the standard copy-polish banned phrases, strategy writing has its own failure modes:
+Beyond the standard banned phrases (enforced by the copy linter hook and `/write:voice`), strategy writing has its own failure modes:
 
 ### Banned Strategy Phrases
 
