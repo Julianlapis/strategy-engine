@@ -24,7 +24,7 @@ Some modes add or skip phases:
 
 ## Approval Gates
 
-The lead agent MUST pause for Julian's approval at these points:
+The engine MUST pause for Julian's approval at these points:
 
 1. **After Structure phase**: Present the narrative architecture, coined concept candidates, and expression depth. Do not proceed until confirmed.
 2. **After concept selection**: If multiple concepts were proposed, Julian picks. Don't pick for him.
@@ -32,7 +32,7 @@ The lead agent MUST pause for Julian's approval at these points:
 
 ## Drift Prevention
 
-The lead agent checks for drift at these intervals:
+Check for drift at these intervals:
 
 - **Every mode invocation**: Read `feedback-log.md` first. Always.
 - **Every quality gate**: Check output against `rules/voice.md` and `rules/quality-gates.md`.
@@ -40,19 +40,19 @@ The lead agent checks for drift at these intervals:
 
 ## Handoff Rules
 
-- The lead agent can suggest mode transitions: "This positioning could become a brief. Want me to run /strategy:brief on it?"
+- Suggest mode transitions when appropriate: "This positioning could become a brief. Want me to run /strategy:brief on it?"
 - Julian decides. The engine never auto-chains modes.
-- When handing off between modes, the lead agent carries forward: the brief summary, the approved concept, and any Julian feedback from the current session.
+- When handing off between modes, carry forward: the brief summary, the approved concept, and any Julian feedback from the current session.
 
 ## Feedback Log Protocol
 
 Julian's corrections go into `feedback-log.md`. The protocol:
 
 1. Julian flags a problem in the output
-2. The lead agent writes a structured entry: what happened, what was wrong (with specific examples), what the fixes looked like, and the rule going forward
+2. Write a structured entry: what happened, what was wrong (with specific examples), what the fixes looked like, and the rule going forward
 3. The entry is binding on all future runs across all modes
 4. Automated improvements (from /strategy:sharpen) NEVER override feedback log entries
 
 ## Observation Protocol
 
-After every run, the lead agent writes a structured observation to `logs/execution-log.md`. See `rules/observation.md` for the format.
+After every run, write a structured observation to `logs/execution-log.md`. See `rules/observation.md` for the format.

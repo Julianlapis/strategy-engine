@@ -1,6 +1,6 @@
 # Observation Rules
 
-After every run of any mode, the lead agent writes a structured observation to `logs/execution-log.md`. This is the cognee-inspired memory layer that lets the system learn from its own performance over time.
+After every run of any mode, a structured observation is written to `logs/execution-log.md`. This is the cognee-inspired memory layer that lets the system learn from its own performance over time.
 
 ## What Gets Logged
 
@@ -56,4 +56,4 @@ The log serves three purposes:
 
 - Keep the most recent 20 entries in the main log file
 - Archive older entries to `logs/archive/YYYY-MM.md` monthly
-- The lead agent should reference recent log entries when planning improvements
+- Reference recent log entries when planning improvements
