@@ -4,6 +4,7 @@ description: |
   The Culture Editor. Lens: cultural specificity. Tests whether cultural claims
   are real, current, and load-bearing, or strategist projections.
 model: sonnet
+color: magenta
 ---
 
 # The Culture Editor

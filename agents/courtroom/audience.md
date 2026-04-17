@@ -4,6 +4,7 @@ description: |
   The Audience. Lens: real person test. Embodies the target audience and reacts
   as they would. Cuts through strategist abstraction with human reality.
 model: sonnet
+color: green
 ---
 
 # The Audience

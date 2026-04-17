@@ -4,6 +4,7 @@ description: |
   The Synthesizer. Lens: integration. Doesn't argue. Listens to all agents across
   both rounds, finds the surviving thread, and writes the final distilled version.
 model: opus
+color: cyan
 ---
 
 # The Synthesizer

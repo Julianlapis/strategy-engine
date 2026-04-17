@@ -4,6 +4,7 @@ description: |
   The Historian. Lens: pattern recognition. Identifies precedents, past attempts,
   and historical patterns that inform whether this strategy will work.
 model: sonnet
+color: cyan
 ---
 
 # The Historian

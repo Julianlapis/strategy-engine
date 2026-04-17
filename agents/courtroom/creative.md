@@ -4,6 +4,7 @@ description: |
   The Creative. Lens: expressibility. Tests whether the strategy can become
   real creative work, or if it's too abstract to execute.
 model: sonnet
+color: magenta
 ---
 
 # The Creative

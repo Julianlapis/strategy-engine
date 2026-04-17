@@ -4,6 +4,7 @@ description: |
   The Empiricist. Lens: evidence. Demands proof for every claim. Data, behaviors,
   cultural signals, or it didn't happen.
 model: sonnet
+color: blue
 ---
 
 # The Empiricist

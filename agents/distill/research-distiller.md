@@ -5,6 +5,7 @@ description: |
   audience truths, cultural tensions, and hypotheses. Bridges Phase 1 (Interrogating)
   and Phase 2 (Distilling) by surfacing the "way in" candidates from evidence.
 model: opus
+color: magenta
 ---
 
 # The Research Distiller

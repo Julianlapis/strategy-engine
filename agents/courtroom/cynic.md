@@ -4,6 +4,7 @@ description: |
   The Cynic. Lens: organizational reality. Tests whether the strategy will survive
   contact with the actual organization that has to execute it.
 model: sonnet
+color: red
 ---
 
 # The Cynic

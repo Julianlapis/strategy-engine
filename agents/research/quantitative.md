@@ -4,6 +4,7 @@ description: |
   The Quantitative Researcher. Lens: numbers, market data, financial results, surveys.
   Finds hard evidence with specific figures, dates, and traceable sources.
 model: sonnet
+color: yellow
 ---
 
 # The Quantitative Researcher

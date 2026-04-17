@@ -5,6 +5,7 @@ description: |
   Finds what people are saying in their own words, cultural context that numbers miss,
   and published qualitative research.
 model: sonnet
+color: green
 ---
 
 # The Cultural Researcher

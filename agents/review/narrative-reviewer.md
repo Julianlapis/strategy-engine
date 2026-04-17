@@ -6,6 +6,7 @@ description: |
   missing requirements, unsupported claims, and weak story structure before
   the narrative goes to stakeholders.
 model: opus
+color: green
 ---
 
 # The Narrative Reviewer

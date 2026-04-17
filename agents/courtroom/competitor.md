@@ -4,6 +4,7 @@ description: |
   The Competitor. Lens: category context. Tests whether the strategy is truly differentiated
   or if competitors could claim the same territory.
 model: sonnet
+color: yellow
 ---
 
 # The Competitor

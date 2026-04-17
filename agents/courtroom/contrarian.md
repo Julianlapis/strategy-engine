@@ -4,6 +4,7 @@ description: |
   The Contrarian. Lens: inversion. Tests every argument by assuming the opposite is true.
   Forces the strategy to defend itself against its own negation.
 model: sonnet
+color: red
 ---
 
 # The Contrarian
