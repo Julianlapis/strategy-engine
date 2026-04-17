@@ -40,7 +40,7 @@ Before starting strategy work, decide which mode applies:
 | "product spec," "product vision," "product strategy" | `/strategy:product` |
 | "pressure test," "poke holes," "what's wrong with this" | `/strategy:pressure-test` |
 | "courtroom," "debate this," "argue about this," "stress test" | `/strategy:courtroom` |
-| "research," "find evidence," "verify," "back this up," "find examples" | `/strategy:research` |
+| "research," "find evidence," "verify," "back this up," "find examples" | `/strategy:research` (redirects to standalone `/research` plugin) |
 | "sharpen," "improve this skill," "autoresearch" | `/strategy:sharpen` |
 | "strategy," "help me think through," vague strategic ask | `/strategy:go` (router) |
 
