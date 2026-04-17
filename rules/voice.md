@@ -2,64 +2,25 @@
 
 These rules apply to ALL output from every mode in the strategy engine. No exceptions.
 
-## Two-Layer System
+## Source of Truth
 
-### Layer 1: Voice DNA (always on)
-Source: `~/.claude/voice-dna.md`
+Voice and copy quality rules live in the `/write` system:
+- **Identity:** `~/.claude/voice-dna.md`
+- **Clarity:** `~/.claude/copy-polish.md`
+- **Machine enforcement:** `~/.claude/copy-linter-rules.yml` (hook runs automatically)
+- **Judgment enforcement:** `/write:voice` (spawns fresh-context subagent)
 
-Every sentence follows Julian's voice identity:
+Read `voice-dna.md` before writing any prose. For client-facing output, also read `copy-polish.md`.
 
-- Contractions always (don't, can't, won't)
-- Short paragraphs (1-3 sentences max)
-- Physical verbs for abstract processes ("sanded down" not "improved," "bolted on" not "added")
-- No em dashes ever. Use commas, periods, colons, semicolons, parentheses.
-- Numbers as digits
-- Bold sparingly (1-2 key moments per section)
-- Vary sentence length. Mix short punchy lines with longer ones.
-- Natural transitions, not mechanical ones
-- When uncertain, say so plainly
+## When to Run /write:voice
 
-### Layer 2: Copy Polish (client-facing skills only)
-Source: `~/.claude/copy-polish.md`
+**Auto-invoked by client-facing skills:** narrative, brief, distill (slide copy), narrative-review.
+**NOT invoked by internal tools:** courtroom, research, pressure-test.
 
-Auto-invoked by: narrative, brief, distill (slide copy), narrative-review, agentic-slides.
-NOT invoked by: courtroom, research, pressure-test (internal tools).
+For client-facing skills: run `/write:voice` at the quality gate phase. It spawns a fresh-context subagent that scores identity (35/50) and clarity (35/50). Below threshold = revise internally before presenting to Julian.
 
-Covers: plain language, jargon elimination, directness, strategy-specific banned phrases, readability scoring.
+## Quick Reference
 
-### Banned Phrases (fatal, Layer 1)
+The copy linter hook catches mechanical violations automatically (banned phrases, em dashes, The Big One, adverbs, staccato, false agency). The full lists live in `copy-linter-rules.yml`.
 
-See Julian's global CLAUDE.md and voice-dna.md for the full list. The following are common in strategy writing:
-
-- "In today's [anything]"
-- "It's important/worth noting"
-- "Delve" / "Dive into" / "Unpack"
-- "Harness" / "Leverage" / "Utilize"
-- "Landscape" / "Realm" / "Robust"
-- "Game-changer" / "Cutting-edge"
-- "Furthermore" / "Additionally" / "Moreover"
-- "This isn't X. This is Y." and ALL variations (FATAL)
-
-### Anti-Slop (Layer 1, final pass)
-
-Run the full copy-polish checklist on every draft:
-
-- False agency ("the decision emerges")
-- Narrator-from-distance voice ("a GTM engine where...")
-- Rhetorical setups ("What if I told you")
-- Dramatic fragmentation
-- Adverb creep
-- Passive voice
-- Throat-clearing openers
-- Vague declaratives ("Everything we do next compounds")
-- Triple-repeat cadence ("every X, every Y, every Z")
-- Over-symmetric parallel construction
-- Pull-quotes trying too hard
-
-## Application
-
-**Layer 1 runs on everything:** strategy docs, slide copy, briefs, product specs, pressure test critiques, courtroom synthesis, any prose that reaches Julian.
-
-**Layer 2 runs on client-facing output only:** strategy docs, slide copy, briefs. Skills that auto-invoke Layer 2 include it in their required_reading.
-
-Score against both rubrics when both layers apply. Voice Score (identity, 35/50) and Polish Score (clarity, 35/50).
+For judgment calls (rhythm, register, voice authenticity, narrative density), invoke `/write:voice`.
